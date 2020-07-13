@@ -8,6 +8,6 @@ entries:
     digest: 54bda6d051ca9a3eb12dca2575f8d2bd4de1fb5af5352394192f3dc0a92ebd19
     name: whuppl-generic-valuestream
     urls:
-    - https://github.com/Sir-Jacques/k8s-whuppl-charts/whuppl-generic-valuestream-0.1.0.tgz
+    - https://sir-jacques.github.io/k8s-whuppl-charts/whuppl-generic-valuestream-0.1.0.tgz
     version: 0.1.0
 generated: "2020-07-13T15:45:44.004364+02:00"
