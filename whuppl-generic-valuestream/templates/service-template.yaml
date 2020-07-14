@@ -2,6 +2,7 @@
 {{- range $project := $projects }}
 {{- range $namespace := $project.namespaces }}
 {{- range $service := $namespace.services }}
+---
 apiVersion: v1
 kind: Service
 metadata:

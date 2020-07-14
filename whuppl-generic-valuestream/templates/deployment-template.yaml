@@ -2,6 +2,7 @@
 {{- range $project := $projects }}
 {{- range $namespace := $project.namespaces }}
 {{- range $deployment := $namespace.deployments }}
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
