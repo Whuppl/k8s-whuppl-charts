@@ -3,11 +3,20 @@ entries:
   whuppl-generic-valuestream:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-07-14T11:09:37.2315002+02:00"
+    created: "2020-07-14T11:12:55.7859446+02:00"
+    description: A Helm chart for Kubernetes
+    digest: 6e0de73a79fb5ea48819f29babd85f04dc30f276282e4343dcef6daea5d63633
+    name: whuppl-generic-valuestream
+    urls:
+    - whuppl-generic-valuestream-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2020-07-14T11:12:55.7848942+02:00"
     description: A Helm chart for Kubernetes
     digest: 059a348923bcb312b261a2d49a969b890a47468e25b8de7d740d98228b3f437b
     name: whuppl-generic-valuestream
     urls:
     - whuppl-generic-valuestream-0.1.0.tgz
     version: 0.1.0
-generated: "2020-07-14T11:09:37.2300406+02:00"
+generated: "2020-07-14T11:12:55.783499+02:00"
