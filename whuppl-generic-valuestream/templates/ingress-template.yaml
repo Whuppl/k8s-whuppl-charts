@@ -12,12 +12,11 @@ metadata:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
     nginx.ingress.kubernetes.io/ssl-passthrough: "true"
-    cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
   tls:
   - hosts:
     - {{ $service.host }}
-    secretName: {{ $service.appName }}-tls
+    secretName: letsencrypt-certs
   rules:
   - host: {{ $service.host }}
     http:
