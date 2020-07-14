@@ -17,7 +17,7 @@ spec:
   tls:
   - hosts:
     - {{ $service.host }}
-    secretName: {{ $service.appName }}-tls
+    secretName: {{ $namespace.name }}-{{ $service.appName }}-tls
   rules:
   - host: {{ $service.host }}
     http:
