@@ -17,7 +17,7 @@ spec:
   tls:
   - hosts:
     - {{ $service.host }}
-    secretName: letsencrypt-certs
+    secretName: {{ $service.host }}-tls
   rules:
   - host: {{ $service.host }}
     http:
