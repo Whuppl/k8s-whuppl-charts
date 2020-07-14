@@ -1,0 +1,31 @@
+{{- $projects := .Values.projects }}
+{{- range $project := $projects }}
+{{- range $namespace := $project.namespaces }}
+{{- range $deployment := $namespace.deployments }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $deployment.appName }}
+  namespace: {{ $namespace.name }}
+  labels:
+    app: {{ $deployment.appName }}
+spec:
+  replicas: {{ $deployment.replicas }}
+  selector:
+    matchLabels:
+      app: {{ $deployment.appName }}
+  template:
+    metadata:
+      labels:
+        app: {{ $deployment.appName }}
+    spec:
+      containers:
+      - name: {{ $deployment.appName }}
+        image: {{ $deployment.image }}
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+      - name: dockerhub-secret
+{{- end }}
+{{- end }}
+{{- end }}
