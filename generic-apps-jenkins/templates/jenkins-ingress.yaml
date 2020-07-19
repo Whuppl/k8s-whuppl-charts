@@ -1,10 +1,10 @@
-{{- $values := .Values }}
+# This template contains hardcoded test values
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: jenkins-{{ $values.ops_namespace }}
-  namespace: {{ $values.ops_namespace }}
+  name: jenkins-whuppl-ops
+  namespace: default
   annotations:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
@@ -13,13 +13,12 @@ metadata:
 spec:
   tls:
   - hosts:
-    - {{ $values.endpoint }}
-    secretName: {{ $values.endpoint }}-tls
+    - jenkins.k8s.whuppl.io
+    secretName: jenkins.k8s.whuppl.io-tls
   rules:
-  - host: {{ $values.endpoint }}
+  - host: jenkins.k8s.whuppl.io
     http:
       paths:
       - backend:
-          serviceName: {{ $values.jenkins_service_name }}
-          servicePort: {{ $values.jenkins_service_port }}
-{{- end }}
+          serviceName: jenkins-whuppl
+          servicePort: 8080
