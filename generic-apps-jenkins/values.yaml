@@ -1,1 +1,5 @@
 # Default values for generic-app-jenkins
+jenkins:
+  enabled: true
+  master:
+  imageTag: "2.244"
