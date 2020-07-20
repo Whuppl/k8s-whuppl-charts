@@ -2,7 +2,18 @@ apiVersion: v1
 entries:
   generic-apps-jenkins:
   - apiVersion: v1
-    created: "2020-07-20T02:34:57.9303812+02:00"
+    created: "2020-07-20T02:42:46.2515057+02:00"
+    description: Open source continuous integration server. It supports multiple SCM
+      tools including CVS, Subversion and Git. It can execute Apache Ant and Apache
+      Maven-based projects as well as arbitrary scripts.
+    digest: 7372a4613f1eaf21f966eeb29446c037ece808e0869fca10299f80bde955eeee
+    home: https://jenkins.io/
+    name: generic-apps-jenkins
+    urls:
+    - generic-apps-jenkins-0.0.8.tgz
+    version: 0.0.8
+  - apiVersion: v1
+    created: "2020-07-20T02:42:46.2473704+02:00"
     description: Open source continuous integration server. It supports multiple SCM
       tools including CVS, Subversion and Git. It can execute Apache Ant and Apache
       Maven-based projects as well as arbitrary scripts.
@@ -13,7 +24,7 @@ entries:
     - generic-apps-jenkins-0.0.7.tgz
     version: 0.0.7
   - apiVersion: v1
-    created: "2020-07-20T02:34:57.9248077+02:00"
+    created: "2020-07-20T02:42:46.2413657+02:00"
     description: Open source continuous integration server. It supports multiple SCM
       tools including CVS, Subversion and Git. It can execute Apache Ant and Apache
       Maven-based projects as well as arbitrary scripts.
@@ -24,7 +35,7 @@ entries:
     - generic-apps-jenkins-0.0.6.tgz
     version: 0.0.6
   - apiVersion: v1
-    created: "2020-07-20T02:34:57.9206814+02:00"
+    created: "2020-07-20T02:42:46.2366364+02:00"
     description: Open source continuous integration server. It supports multiple SCM
       tools including CVS, Subversion and Git. It can execute Apache Ant and Apache
       Maven-based projects as well as arbitrary scripts.
@@ -35,7 +46,7 @@ entries:
     - generic-apps-jenkins-0.0.5.tgz
     version: 0.0.5
   - apiVersion: v1
-    created: "2020-07-20T02:34:57.9164036+02:00"
+    created: "2020-07-20T02:42:46.2325263+02:00"
     description: Open source continuous integration server. It supports multiple SCM
       tools including CVS, Subversion and Git. It can execute Apache Ant and Apache
       Maven-based projects as well as arbitrary scripts.
@@ -46,7 +57,7 @@ entries:
     - generic-apps-jenkins-0.0.4.tgz
     version: 0.0.4
   - apiVersion: v1
-    created: "2020-07-20T02:34:57.9122895+02:00"
+    created: "2020-07-20T02:42:46.2283404+02:00"
     description: Open source continuous integration server. It supports multiple SCM
       tools including CVS, Subversion and Git. It can execute Apache Ant and Apache
       Maven-based projects as well as arbitrary scripts.
@@ -57,7 +68,7 @@ entries:
     - generic-apps-jenkins-0.0.3.tgz
     version: 0.0.3
   - apiVersion: v1
-    created: "2020-07-20T02:34:57.9063356+02:00"
+    created: "2020-07-20T02:42:46.2229655+02:00"
     description: Open source continuous integration server. It supports multiple SCM
       tools including CVS, Subversion and Git. It can execute Apache Ant and Apache
       Maven-based projects as well as arbitrary scripts.
@@ -68,7 +79,7 @@ entries:
     - generic-apps-jenkins-0.0.2.tgz
     version: 0.0.2
   - apiVersion: v1
-    created: "2020-07-20T02:34:57.901804+02:00"
+    created: "2020-07-20T02:42:46.2184947+02:00"
     description: Open source continuous integration server. It supports multiple SCM
       tools including CVS, Subversion and Git. It can execute Apache Ant and Apache
       Maven-based projects as well as arbitrary scripts.
@@ -81,7 +92,7 @@ entries:
   whuppl-generic-valuestream:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-07-20T02:34:57.9389993+02:00"
+    created: "2020-07-20T02:42:46.2602055+02:00"
     description: A Helm chart for Kubernetes
     digest: 6120a329386105d9223593d273eabc2cd32107e313563e747a25bfd3c4037b26
     name: whuppl-generic-valuestream
@@ -90,7 +101,7 @@ entries:
     version: 0.1.7
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-07-20T02:34:57.9379255+02:00"
+    created: "2020-07-20T02:42:46.2591141+02:00"
     description: A Helm chart for Kubernetes
     digest: aaa9ae570a2f0a3959aeb36e8a0391e35e09ae90e5601e1bab934401982bf27b
     name: whuppl-generic-valuestream
@@ -99,7 +110,7 @@ entries:
     version: 0.1.6
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-07-20T02:34:57.9368299+02:00"
+    created: "2020-07-20T02:42:46.2579767+02:00"
     description: A Helm chart for Kubernetes
     digest: fe586e814eb812f00a3a30d58e7f120f2fce1749c899b0e8c4f9f0eb8a4f9189
     name: whuppl-generic-valuestream
@@ -108,7 +119,7 @@ entries:
     version: 0.1.5
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-07-20T02:34:57.9356998+02:00"
+    created: "2020-07-20T02:42:46.2568971+02:00"
     description: A Helm chart for Kubernetes
     digest: a7ce5408a97ed5533aa3e4135dca00598611aa52067adbc22de2563d47ea6dd4
     name: whuppl-generic-valuestream
@@ -117,7 +128,7 @@ entries:
     version: 0.1.4
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-07-20T02:34:57.9346031+02:00"
+    created: "2020-07-20T02:42:46.2557976+02:00"
     description: A Helm chart for Kubernetes
     digest: e0e3ad1b23aa28bdabf5ea3bc16baa0a08784a2f14bdef38f5b248de1d262bbb
     name: whuppl-generic-valuestream
@@ -126,7 +137,7 @@ entries:
     version: 0.1.3
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-07-20T02:34:57.9335234+02:00"
+    created: "2020-07-20T02:42:46.2547241+02:00"
     description: A Helm chart for Kubernetes
     digest: 80c744422dbe14921df7b80a0aaa4cf51d1cb2f017ff3195c032897418010fc6
     name: whuppl-generic-valuestream
@@ -135,7 +146,7 @@ entries:
     version: 0.1.2
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-07-20T02:34:57.9324237+02:00"
+    created: "2020-07-20T02:42:46.2536075+02:00"
     description: A Helm chart for Kubernetes
     digest: 6e0de73a79fb5ea48819f29babd85f04dc30f276282e4343dcef6daea5d63633
     name: whuppl-generic-valuestream
@@ -144,11 +155,11 @@ entries:
     version: 0.1.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-07-20T02:34:57.9314604+02:00"
+    created: "2020-07-20T02:42:46.25259+02:00"
     description: A Helm chart for Kubernetes
     digest: 059a348923bcb312b261a2d49a969b890a47468e25b8de7d740d98228b3f437b
     name: whuppl-generic-valuestream
     urls:
     - whuppl-generic-valuestream-0.1.0.tgz
     version: 0.1.0
-generated: "2020-07-20T02:34:57.8970666+02:00"
+generated: "2020-07-20T02:42:46.2138899+02:00"
