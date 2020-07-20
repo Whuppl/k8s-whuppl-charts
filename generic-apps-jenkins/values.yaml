@@ -2,4 +2,4 @@
 jenkins:
   enabled: true
   master:
-  imageTag: "2.244"
+    imageTag: "2.244"
