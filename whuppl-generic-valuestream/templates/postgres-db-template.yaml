@@ -1,6 +1,7 @@
 {{- $projects := .Values.projects }}
 {{- range $project := $projects }}
 {{- range $namespace := $project.namespaces }}
+{{- if $namespace.database }}
 {{- if $namespace.database.deploy }}
 apiVersion: v1
 kind: ConfigMap
@@ -90,6 +91,7 @@ spec:
    - port: 5432
   selector:
    app: postgres
+{{- end }}
 {{- end }}
 {{- end }}
 {{- end }}
