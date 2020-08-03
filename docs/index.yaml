@@ -2,7 +2,11 @@ apiVersion: v1
 entries:
   generic-apps-jenkins:
   - apiVersion: v1
-    created: "2020-07-20T02:59:46.5602921+02:00"
+    created: "2020-08-03T17:36:38.6925793+02:00"
+    dependencies:
+    - name: jenkins
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 2.3.3
     description: Open source continuous integration server. It supports multiple SCM
       tools including CVS, Subversion and Git. It can execute Apache Ant and Apache
       Maven-based projects as well as arbitrary scripts.
@@ -13,7 +17,11 @@ entries:
     - generic-apps-jenkins-0.0.9.tgz
     version: 0.0.9
   - apiVersion: v1
-    created: "2020-07-20T02:59:46.5561495+02:00"
+    created: "2020-08-03T17:36:38.6872804+02:00"
+    dependencies:
+    - name: jenkins
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 2.3.3
     description: Open source continuous integration server. It supports multiple SCM
       tools including CVS, Subversion and Git. It can execute Apache Ant and Apache
       Maven-based projects as well as arbitrary scripts.
@@ -24,7 +32,11 @@ entries:
     - generic-apps-jenkins-0.0.8.tgz
     version: 0.0.8
   - apiVersion: v1
-    created: "2020-07-20T02:59:46.5329569+02:00"
+    created: "2020-08-03T17:36:38.6811342+02:00"
+    dependencies:
+    - name: jenkins
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 2.3.3
     description: Open source continuous integration server. It supports multiple SCM
       tools including CVS, Subversion and Git. It can execute Apache Ant and Apache
       Maven-based projects as well as arbitrary scripts.
@@ -35,7 +47,11 @@ entries:
     - generic-apps-jenkins-0.0.7.tgz
     version: 0.0.7
   - apiVersion: v1
-    created: "2020-07-20T02:59:46.5256005+02:00"
+    created: "2020-08-03T17:36:38.6673558+02:00"
+    dependencies:
+    - name: jenkins
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 2.3.3
     description: Open source continuous integration server. It supports multiple SCM
       tools including CVS, Subversion and Git. It can execute Apache Ant and Apache
       Maven-based projects as well as arbitrary scripts.
@@ -46,7 +62,11 @@ entries:
     - generic-apps-jenkins-0.0.6.tgz
     version: 0.0.6
   - apiVersion: v1
-    created: "2020-07-20T02:59:46.5211595+02:00"
+    created: "2020-08-03T17:36:38.6613943+02:00"
+    dependencies:
+    - name: jenkins
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 2.3.3
     description: Open source continuous integration server. It supports multiple SCM
       tools including CVS, Subversion and Git. It can execute Apache Ant and Apache
       Maven-based projects as well as arbitrary scripts.
@@ -57,7 +77,11 @@ entries:
     - generic-apps-jenkins-0.0.5.tgz
     version: 0.0.5
   - apiVersion: v1
-    created: "2020-07-20T02:59:46.5086462+02:00"
+    created: "2020-08-03T17:36:38.6562443+02:00"
+    dependencies:
+    - name: jenkins
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 2.3.3
     description: Open source continuous integration server. It supports multiple SCM
       tools including CVS, Subversion and Git. It can execute Apache Ant and Apache
       Maven-based projects as well as arbitrary scripts.
@@ -68,7 +92,11 @@ entries:
     - generic-apps-jenkins-0.0.4.tgz
     version: 0.0.4
   - apiVersion: v1
-    created: "2020-07-20T02:59:46.5047714+02:00"
+    created: "2020-08-03T17:36:38.6496177+02:00"
+    dependencies:
+    - name: jenkins
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 2.3.3
     description: Open source continuous integration server. It supports multiple SCM
       tools including CVS, Subversion and Git. It can execute Apache Ant and Apache
       Maven-based projects as well as arbitrary scripts.
@@ -79,7 +107,11 @@ entries:
     - generic-apps-jenkins-0.0.3.tgz
     version: 0.0.3
   - apiVersion: v1
-    created: "2020-07-20T02:59:46.4985977+02:00"
+    created: "2020-08-03T17:36:38.643692+02:00"
+    dependencies:
+    - name: jenkins
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 2.3.3
     description: Open source continuous integration server. It supports multiple SCM
       tools including CVS, Subversion and Git. It can execute Apache Ant and Apache
       Maven-based projects as well as arbitrary scripts.
@@ -90,7 +122,11 @@ entries:
     - generic-apps-jenkins-0.0.2.tgz
     version: 0.0.2
   - apiVersion: v1
-    created: "2020-07-20T02:59:46.4936176+02:00"
+    created: "2020-08-03T17:36:38.6382304+02:00"
+    dependencies:
+    - name: jenkins
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 2.3.3
     description: Open source continuous integration server. It supports multiple SCM
       tools including CVS, Subversion and Git. It can execute Apache Ant and Apache
       Maven-based projects as well as arbitrary scripts.
@@ -103,7 +139,16 @@ entries:
   whuppl-generic-valuestream:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-07-20T02:59:46.5693177+02:00"
+    created: "2020-08-03T17:36:38.7108766+02:00"
+    description: A Helm chart for Kubernetes
+    digest: 6d766ca60d7f3138ebc6b63f151205df9ab8104d08eb5e36dc5b16a2d67cc903
+    name: whuppl-generic-valuestream
+    urls:
+    - whuppl-generic-valuestream-0.1.8.tgz
+    version: 0.1.8
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2020-08-03T17:36:38.7090358+02:00"
     description: A Helm chart for Kubernetes
     digest: 6120a329386105d9223593d273eabc2cd32107e313563e747a25bfd3c4037b26
     name: whuppl-generic-valuestream
@@ -112,7 +157,7 @@ entries:
     version: 0.1.7
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-07-20T02:59:46.568183+02:00"
+    created: "2020-08-03T17:36:38.7071634+02:00"
     description: A Helm chart for Kubernetes
     digest: aaa9ae570a2f0a3959aeb36e8a0391e35e09ae90e5601e1bab934401982bf27b
     name: whuppl-generic-valuestream
@@ -121,7 +166,7 @@ entries:
     version: 0.1.6
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-07-20T02:59:46.5670672+02:00"
+    created: "2020-08-03T17:36:38.7052825+02:00"
     description: A Helm chart for Kubernetes
     digest: fe586e814eb812f00a3a30d58e7f120f2fce1749c899b0e8c4f9f0eb8a4f9189
     name: whuppl-generic-valuestream
@@ -130,7 +175,7 @@ entries:
     version: 0.1.5
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-07-20T02:59:46.565931+02:00"
+    created: "2020-08-03T17:36:38.7033336+02:00"
     description: A Helm chart for Kubernetes
     digest: a7ce5408a97ed5533aa3e4135dca00598611aa52067adbc22de2563d47ea6dd4
     name: whuppl-generic-valuestream
@@ -139,7 +184,7 @@ entries:
     version: 0.1.4
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-07-20T02:59:46.5647412+02:00"
+    created: "2020-08-03T17:36:38.7014082+02:00"
     description: A Helm chart for Kubernetes
     digest: e0e3ad1b23aa28bdabf5ea3bc16baa0a08784a2f14bdef38f5b248de1d262bbb
     name: whuppl-generic-valuestream
@@ -148,7 +193,7 @@ entries:
     version: 0.1.3
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-07-20T02:59:46.5635874+02:00"
+    created: "2020-08-03T17:36:38.6988425+02:00"
     description: A Helm chart for Kubernetes
     digest: 80c744422dbe14921df7b80a0aaa4cf51d1cb2f017ff3195c032897418010fc6
     name: whuppl-generic-valuestream
@@ -157,7 +202,7 @@ entries:
     version: 0.1.2
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-07-20T02:59:46.5624354+02:00"
+    created: "2020-08-03T17:36:38.6968669+02:00"
     description: A Helm chart for Kubernetes
     digest: 6e0de73a79fb5ea48819f29babd85f04dc30f276282e4343dcef6daea5d63633
     name: whuppl-generic-valuestream
@@ -166,11 +211,11 @@ entries:
     version: 0.1.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-07-20T02:59:46.5613668+02:00"
+    created: "2020-08-03T17:36:38.6943682+02:00"
     description: A Helm chart for Kubernetes
     digest: 059a348923bcb312b261a2d49a969b890a47468e25b8de7d740d98228b3f437b
     name: whuppl-generic-valuestream
     urls:
     - whuppl-generic-valuestream-0.1.0.tgz
     version: 0.1.0
-generated: "2020-07-20T02:59:46.488766+02:00"
+generated: "2020-08-03T17:36:38.6207405+02:00"
