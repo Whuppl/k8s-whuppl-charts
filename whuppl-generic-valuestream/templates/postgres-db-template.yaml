@@ -1,7 +1,9 @@
 {{- $projects := .Values.projects }}
 {{- range $project := $projects }}
 {{- range $namespace := $project.namespaces }}
+{{- if $namespace.database }}
 {{- if $namespace.database.deploy }}
+---
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -24,7 +26,7 @@ metadata:
 spec:
   storageClassName: manual
   capacity:
-    storage: {{- $namespace.database.size }}
+    storage: {{ $namespace.database.size }}
   accessModes:
     - ReadWriteMany
   hostPath:
@@ -34,7 +36,7 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: postgres-pv-claim
-  namespace: {{- $namespace.name }}
+  namespace: {{ $namespace.name }}
   labels:
     app: postgres
 spec:
@@ -43,13 +45,13 @@ spec:
     - ReadWriteMany
   resources:
     requests:
-      storage: {{- $namespace.database.size }}
+      storage: {{ $namespace.database.size }}
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: postgres
-  namespace: {{- $namespace.name }}
+  namespace: {{ $namespace.name }}
 spec:
   replicas: 1
   selector:
@@ -81,15 +83,16 @@ apiVersion: v1
 kind: Service
 metadata:
   name: postgres
-  namespace: {{- $namespace.name }}
+  namespace: {{ $namespace.name }}
   labels:
     app: postgres
 spec:
-  type: ClusterIP
+  type: NodePort
   ports:
    - port: 5432
   selector:
    app: postgres
+{{- end }}
 {{- end }}
 {{- end }}
 {{- end }}
