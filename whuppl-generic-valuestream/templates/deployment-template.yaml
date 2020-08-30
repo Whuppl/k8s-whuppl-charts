@@ -25,7 +25,7 @@ spec:
         image: {{ $deployment.image }}
         ports:
         - containerPort: 80
-      imagePullPolicy: Always
+        imagePullPolicy: Always
       imagePullSecrets:
       - name: dockerhub-secret
 {{- end }}
