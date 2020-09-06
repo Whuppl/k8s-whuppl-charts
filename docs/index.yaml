@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   generic-apps-jenkins:
   - apiVersion: v1
-    created: "2020-09-06T13:52:33.5255829+02:00"
+    created: "2020-09-06T14:03:30.6782702+02:00"
     dependencies:
     - name: jenkins
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -17,7 +17,7 @@ entries:
     - generic-apps-jenkins-0.0.9.tgz
     version: 0.0.9
   - apiVersion: v1
-    created: "2020-09-06T13:52:33.5213314+02:00"
+    created: "2020-09-06T14:03:30.673422+02:00"
     dependencies:
     - name: jenkins
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -32,7 +32,7 @@ entries:
     - generic-apps-jenkins-0.0.8.tgz
     version: 0.0.8
   - apiVersion: v1
-    created: "2020-09-06T13:52:33.5169728+02:00"
+    created: "2020-09-06T14:03:30.6686014+02:00"
     dependencies:
     - name: jenkins
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -47,7 +47,7 @@ entries:
     - generic-apps-jenkins-0.0.7.tgz
     version: 0.0.7
   - apiVersion: v1
-    created: "2020-09-06T13:52:33.511492+02:00"
+    created: "2020-09-06T14:03:30.662254+02:00"
     dependencies:
     - name: jenkins
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -62,7 +62,7 @@ entries:
     - generic-apps-jenkins-0.0.6.tgz
     version: 0.0.6
   - apiVersion: v1
-    created: "2020-09-06T13:52:33.5073461+02:00"
+    created: "2020-09-06T14:03:30.6567233+02:00"
     dependencies:
     - name: jenkins
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -77,7 +77,7 @@ entries:
     - generic-apps-jenkins-0.0.5.tgz
     version: 0.0.5
   - apiVersion: v1
-    created: "2020-09-06T13:52:33.5006529+02:00"
+    created: "2020-09-06T14:03:30.651544+02:00"
     dependencies:
     - name: jenkins
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -92,7 +92,7 @@ entries:
     - generic-apps-jenkins-0.0.4.tgz
     version: 0.0.4
   - apiVersion: v1
-    created: "2020-09-06T13:52:33.4960071+02:00"
+    created: "2020-09-06T14:03:30.6448381+02:00"
     dependencies:
     - name: jenkins
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -107,7 +107,7 @@ entries:
     - generic-apps-jenkins-0.0.3.tgz
     version: 0.0.3
   - apiVersion: v1
-    created: "2020-09-06T13:52:33.4916359+02:00"
+    created: "2020-09-06T14:03:30.6392264+02:00"
     dependencies:
     - name: jenkins
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -122,7 +122,7 @@ entries:
     - generic-apps-jenkins-0.0.2.tgz
     version: 0.0.2
   - apiVersion: v1
-    created: "2020-09-06T13:52:33.4859765+02:00"
+    created: "2020-09-06T14:03:30.6334744+02:00"
     dependencies:
     - name: jenkins
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -139,7 +139,16 @@ entries:
   whuppl-generic-valuestream:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-09-06T13:52:33.5510965+02:00"
+    created: "2020-09-06T14:03:30.7056835+02:00"
+    description: A Helm chart for Kubernetes
+    digest: e18b7740c35bf55e514fb66ef76d4e18b736775f0c048de4b23d4ae0f8d1a3ae
+    name: whuppl-generic-valuestream
+    urls:
+    - whuppl-generic-valuestream-0.1.22.tgz
+    version: 0.1.22
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2020-09-06T14:03:30.704181+02:00"
     description: A Helm chart for Kubernetes
     digest: 950d30e0fc8b489768904fb4b8658aa8107b83f1d3bf72e40b6cd7710ee6de8e
     name: whuppl-generic-valuestream
@@ -148,7 +157,7 @@ entries:
     version: 0.1.21
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-09-06T13:52:33.5495141+02:00"
+    created: "2020-09-06T14:03:30.7024693+02:00"
     description: A Helm chart for Kubernetes
     digest: ae3757e37f64b744065bac49508233cdbcb656a0d9cc5b221e07dc7718d3de95
     name: whuppl-generic-valuestream
@@ -157,7 +166,7 @@ entries:
     version: 0.1.20
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-09-06T13:52:33.5464893+02:00"
+    created: "2020-09-06T14:03:30.6990499+02:00"
     description: A Helm chart for Kubernetes
     digest: c5c6de66a38a8e16a2f4f1067506bbec72e058dba0570093fffd01b7ed359cd2
     name: whuppl-generic-valuestream
@@ -166,7 +175,7 @@ entries:
     version: 0.1.19
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-09-06T13:52:33.5449344+02:00"
+    created: "2020-09-06T14:03:30.6974469+02:00"
     description: A Helm chart for Kubernetes
     digest: f3c9567f2f1490096ca9f7d640199f9c85b803c5377d00f53204836451a5084f
     name: whuppl-generic-valuestream
@@ -175,7 +184,7 @@ entries:
     version: 0.1.18
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-09-06T13:52:33.5433804+02:00"
+    created: "2020-09-06T14:03:30.695966+02:00"
     description: A Helm chart for Kubernetes
     digest: c02e6ddf6ceea66b67f34331dfb78806eeca5365c1cbd55e6f68aae68863f2f2
     name: whuppl-generic-valuestream
@@ -184,7 +193,7 @@ entries:
     version: 0.1.17
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-09-06T13:52:33.5418972+02:00"
+    created: "2020-09-06T14:03:30.6944548+02:00"
     description: A Helm chart for Kubernetes
     digest: 3f967396460e82c12db9cc2252dbe05bbaa94e3639cee23c15036e39adc9ce2e
     name: whuppl-generic-valuestream
@@ -193,7 +202,7 @@ entries:
     version: 0.1.16
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-09-06T13:52:33.5401579+02:00"
+    created: "2020-09-06T14:03:30.6929532+02:00"
     description: A Helm chart for Kubernetes
     digest: 944a461a5ae3ca15478d8e2a84823244c4830c53174d23aff47f49bfb64d3384
     name: whuppl-generic-valuestream
@@ -202,7 +211,7 @@ entries:
     version: 0.1.15
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-09-06T13:52:33.538612+02:00"
+    created: "2020-09-06T14:03:30.6913233+02:00"
     description: A Helm chart for Kubernetes
     digest: 270ad9fef405dde77f59e17ec1be647ec4ab5b58200f25f7ed72f6c6dd1a6b96
     name: whuppl-generic-valuestream
@@ -211,7 +220,7 @@ entries:
     version: 0.1.14
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-09-06T13:52:33.5370825+02:00"
+    created: "2020-09-06T14:03:30.6897177+02:00"
     description: A Helm chart for Kubernetes
     digest: 4174f7dc7e01ea1765cc81a6ffea4776751680e1bd5056866164faf68f77815a
     name: whuppl-generic-valuestream
@@ -220,7 +229,7 @@ entries:
     version: 0.1.13
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-09-06T13:52:33.5353651+02:00"
+    created: "2020-09-06T14:03:30.6879811+02:00"
     description: A Helm chart for Kubernetes
     digest: a67afa892fb7f968b7e37ba28315f7d5f58c6e3a6196645c45a324f75a1769c4
     name: whuppl-generic-valuestream
@@ -229,7 +238,7 @@ entries:
     version: 0.1.12
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-09-06T13:52:33.5337179+02:00"
+    created: "2020-09-06T14:03:30.6862717+02:00"
     description: A Helm chart for Kubernetes
     digest: 4d2391021d6c691613e5bb806a6d69d76505292c3d8f89802d745af10596ef49
     name: whuppl-generic-valuestream
@@ -238,7 +247,7 @@ entries:
     version: 0.1.11
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-09-06T13:52:33.5321187+02:00"
+    created: "2020-09-06T14:03:30.6847086+02:00"
     description: A Helm chart for Kubernetes
     digest: 4575f5cd25e73c8b5e30e196511228fdf588097828c572556f3eeb8bf179174b
     name: whuppl-generic-valuestream
@@ -247,7 +256,7 @@ entries:
     version: 0.1.10
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-09-06T13:52:33.5616619+02:00"
+    created: "2020-09-06T14:03:30.7178433+02:00"
     description: A Helm chart for Kubernetes
     digest: d01030b4b7252a548704e4d2a31efa7ee1088fc0aa276f13a9abf797af4290c4
     name: whuppl-generic-valuestream
@@ -256,7 +265,7 @@ entries:
     version: 0.1.9
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-09-06T13:52:33.5602177+02:00"
+    created: "2020-09-06T14:03:30.7150809+02:00"
     description: A Helm chart for Kubernetes
     digest: 6d766ca60d7f3138ebc6b63f151205df9ab8104d08eb5e36dc5b16a2d67cc903
     name: whuppl-generic-valuestream
@@ -265,7 +274,7 @@ entries:
     version: 0.1.8
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-09-06T13:52:33.5587637+02:00"
+    created: "2020-09-06T14:03:30.7135463+02:00"
     description: A Helm chart for Kubernetes
     digest: 6120a329386105d9223593d273eabc2cd32107e313563e747a25bfd3c4037b26
     name: whuppl-generic-valuestream
@@ -274,7 +283,7 @@ entries:
     version: 0.1.7
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-09-06T13:52:33.5573584+02:00"
+    created: "2020-09-06T14:03:30.7119211+02:00"
     description: A Helm chart for Kubernetes
     digest: aaa9ae570a2f0a3959aeb36e8a0391e35e09ae90e5601e1bab934401982bf27b
     name: whuppl-generic-valuestream
@@ -283,7 +292,7 @@ entries:
     version: 0.1.6
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-09-06T13:52:33.5556393+02:00"
+    created: "2020-09-06T14:03:30.7104767+02:00"
     description: A Helm chart for Kubernetes
     digest: fe586e814eb812f00a3a30d58e7f120f2fce1749c899b0e8c4f9f0eb8a4f9189
     name: whuppl-generic-valuestream
@@ -292,7 +301,7 @@ entries:
     version: 0.1.5
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-09-06T13:52:33.5541241+02:00"
+    created: "2020-09-06T14:03:30.7087478+02:00"
     description: A Helm chart for Kubernetes
     digest: a7ce5408a97ed5533aa3e4135dca00598611aa52067adbc22de2563d47ea6dd4
     name: whuppl-generic-valuestream
@@ -301,7 +310,7 @@ entries:
     version: 0.1.4
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-09-06T13:52:33.5526216+02:00"
+    created: "2020-09-06T14:03:30.7071863+02:00"
     description: A Helm chart for Kubernetes
     digest: e0e3ad1b23aa28bdabf5ea3bc16baa0a08784a2f14bdef38f5b248de1d262bbb
     name: whuppl-generic-valuestream
@@ -310,7 +319,7 @@ entries:
     version: 0.1.3
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-09-06T13:52:33.5479452+02:00"
+    created: "2020-09-06T14:03:30.700771+02:00"
     description: A Helm chart for Kubernetes
     digest: 80c744422dbe14921df7b80a0aaa4cf51d1cb2f017ff3195c032897418010fc6
     name: whuppl-generic-valuestream
@@ -319,7 +328,7 @@ entries:
     version: 0.1.2
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-09-06T13:52:33.5305739+02:00"
+    created: "2020-09-06T14:03:30.6831871+02:00"
     description: A Helm chart for Kubernetes
     digest: 6e0de73a79fb5ea48819f29babd85f04dc30f276282e4343dcef6daea5d63633
     name: whuppl-generic-valuestream
@@ -328,11 +337,11 @@ entries:
     version: 0.1.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-09-06T13:52:33.5284666+02:00"
+    created: "2020-09-06T14:03:30.6797074+02:00"
     description: A Helm chart for Kubernetes
     digest: 059a348923bcb312b261a2d49a969b890a47468e25b8de7d740d98228b3f437b
     name: whuppl-generic-valuestream
     urls:
     - whuppl-generic-valuestream-0.1.0.tgz
     version: 0.1.0
-generated: "2020-09-06T13:52:33.4789744+02:00"
+generated: "2020-09-06T14:03:30.6256666+02:00"
