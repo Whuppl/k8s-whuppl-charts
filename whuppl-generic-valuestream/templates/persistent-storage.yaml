@@ -14,11 +14,11 @@ metadata:
 spec:
   storageClassName: manual
   capacity:
-    storage: {{ $persistentStorage.size }}
+    storage: {{ $deployment.persistentStorage.size }}
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: {{ $persistentStorage.mountPath }}
+    path: {{ $deployment.persistentStorage.mountPath }}
 ---
 kind: PersistentVolumeClaim
 apiVersion: v1
@@ -26,14 +26,14 @@ metadata:
   name: {{ $deployment.appName }}-pv-claim
   namespace: {{ $namespace.name }}
   labels:
-    app: {{ $persistentStorage.appName }}
+    app: {{ $deployment.persistentStorage.appName }}
 spec:
   storageClassName: manual
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: {{ $persistentStorage.size }}
+      storage: {{ $deployment.persistentStorage.size }}
 {{- end }}
 {{- end }}
 {{- end }}
