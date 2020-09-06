@@ -28,12 +28,12 @@ spec:
         imagePullPolicy: Always
         {{- if $deployment.persistentStorage }}
         volumeMounts:
-        - name: {{ $namespace.name }}-{{ $deployment.appName }}-pv-volume
+        - name: {{ $deployment.persistentStorage.name }}-volume
           mountPath: /mnt/data
       volumes:
-        - name: {{ $namespace.name }}-{{ $deployment.appName }}-pv-volume
+        - name: {{ $deployment.persistentStorage.name }}-volume
           persistentVolumeClaim:
-            claimName: {{ $deployment.appName }}-pv-claim
+            claimName: {{ $deployment.persistentStorage.name }}-claim
         {{- end }}
       imagePullSecrets:
       - name: dockerhub-secret
