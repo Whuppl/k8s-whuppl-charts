@@ -1,12 +1,13 @@
 {{- $projects := .Values.projects }}
 {{- range $project := $projects }}
 {{- range $namespace := $project.namespaces }}
-{{- range $service := $namespace.services }}
+{{- range $deployment := $namespace.deployments }}
+{{- if $deployment.service }}
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: {{ $service.appName }}
+  name: {{ $deployment.appName }}
   namespace: {{ $namespace.name }}
   annotations:
     kubernetes.io/ingress.class: nginx
@@ -16,15 +17,16 @@ metadata:
 spec:
   tls:
   - hosts:
-    - {{ $service.host }}
-    secretName: {{ $service.host }}-tls
+    - {{ $deployment.service.host }}
+    secretName: {{ $deployment.service.host }}-tls
   rules:
-  - host: {{ $service.host }}
+  - host: {{ $deployment.service.host }}
     http:
       paths:
       - backend:
-          serviceName: {{ $service.appName }}
+          serviceName: {{ $deployment.appName }}
           servicePort: 80
+{{- end }}
 {{- end }}
 {{- end }}
 {{- end }}
