@@ -29,7 +29,7 @@ spec:
         {{- if $deployment.persistentStorage }}
         volumeMounts:
         - name: {{ $deployment.persistentStorage.name }}-volume
-          mountPath: /mnt/data
+          mountPath: {{ $deployment.persistentStorage.mountPath }}
       volumes:
         - name: {{ $deployment.persistentStorage.name }}-volume
           persistentVolumeClaim:
