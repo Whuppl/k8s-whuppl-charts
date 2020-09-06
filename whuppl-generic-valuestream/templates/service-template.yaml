@@ -1,24 +1,26 @@
 {{- $projects := .Values.projects }}
 {{- range $project := $projects }}
 {{- range $namespace := $project.namespaces }}
-{{- range $service := $namespace.services }}
+{{- range $deployment := $namespace.deployments }}
+{{- if $deployment.service }}
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ $service.appName }}
+  name: {{ $deployment.appName }}
   namespace: {{ $namespace.name }}
 spec:
   selector:
-    app: {{ $service.appName }}
+    app: {{ $deployment.appName }}
   type: ClusterIP
   ports:
   - port: 80
-    {{- if $service.targetport }}
-    targetPort: {{ $service.targetport }}
+    {{- if $deployment.service.targetport }}
+    targetPort: {{ $deployment.service.targetport }}
     {{- else }}
     targetPort: 80
     {{- end }}
+{{- end }}
 {{- end }}
 {{- end }}
 {{- end }}
