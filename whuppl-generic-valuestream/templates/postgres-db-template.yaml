@@ -10,7 +10,7 @@ metadata:
   name: postgres-config
   namespace: {{ $namespace.name }}
   labels:
-    app: {{ $namespace.database.name }}
+    app: postgres
 data:
   POSTGRES_DB: postgresdb
   POSTGRES_USER: postgresadmin
@@ -19,10 +19,10 @@ data:
 kind: PersistentVolume
 apiVersion: v1
 metadata:
-  name: {{ $namespace.name }}-{{ $namespace.database.name }}-postgres-pv-volume
+  name: {{ $namespace.name }}-postgres-pv-volume
   labels:
     type: local
-    app: {{ $namespace.database.name }}
+    app: postgres
 spec:
   storageClassName: manual
   capacity:
@@ -35,10 +35,10 @@ spec:
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: {{ $namespace.database.name }}-postgres-pv-claim
+  name: postgres-pv-claim
   namespace: {{ $namespace.name }}
   labels:
-    app: {{ $namespace.database.name }}
+    app: postgres
 spec:
   storageClassName: manual
   accessModes:
@@ -50,17 +50,17 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ $namespace.database.name }}
+  name: postgres
   namespace: {{ $namespace.name }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: {{ $namespace.database.name }}
+      app: postgres
   template:
     metadata:
       labels:
-        app: {{ $namespace.database.name }}
+        app: postgres
     spec:
       containers:
         - name: postgres
@@ -77,21 +77,21 @@ spec:
       volumes:
         - name: postgredb
           persistentVolumeClaim:
-            claimName: {{ $namespace.database.name }}-postgres-pv-claim
+            claimName: postgres-pv-claim
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ $namespace.database.name }}
+  name: postgres
   namespace: {{ $namespace.name }}
   labels:
-    app: {{ $namespace.database.name }}
+    app: postgres
 spec:
   type: NodePort
   ports:
    - port: 5432
   selector:
-   app: {{ $namespace.database.name }}
+   app: postgres
 {{- end }}
 {{- end }}
 {{- end }}
