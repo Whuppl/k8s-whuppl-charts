@@ -28,10 +28,10 @@ spec:
         imagePullPolicy: Always
         {{- if $deployment.persistentStorage }}
         volumeMounts:
-        - name: jamal-prd-jamal-api-postgres-pv-volume
+        - name: {{ $namespace.name }}-{{ $deployment.appName }}-pv-volume
           mountPath: /mnt/data
       volumes:
-        - name: {{ $namespace.name }}-{{ $deployment.appName}}-pv-volume
+        - name: {{ $namespace.name }}-{{ $deployment.appName }}-pv-volume
           persistentVolumeClaim:
             claimName: {{ $deployment.appName }}-pv-claim
         {{- end }}
