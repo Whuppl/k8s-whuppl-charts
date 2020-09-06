@@ -1,0 +1,40 @@
+{{- $projects := .Values.projects }}
+{{- range $project := $projects }}
+{{- range $namespace := $project.namespaces }}
+{{- range $deployment := $namespace.deployments }}
+{{- if $deployment.persistentStorage }}
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: {{ $namespace.name }}-{{ $deployment.appName}}-pv-volume
+  labels:
+    type: local
+    app: {{ $deployment.appName }}
+spec:
+  storageClassName: manual
+  capacity:
+    storage: {{ $persistentStorage.size }}
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: {{ $persistentStorage.mountPath }}
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: {{ $deployment.appName }}-pv-claim
+  namespace: {{ $namespace.name }}
+  labels:
+    app: {{ $persistentStorage.appName }}
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ $persistentStorage.size }}
+{{- end }}
+{{- end }}
+{{- end }}
+{{- end }}
