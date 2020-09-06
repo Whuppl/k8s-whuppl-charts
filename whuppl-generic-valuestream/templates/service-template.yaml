@@ -2,7 +2,6 @@
 {{- range $project := $projects }}
 {{- range $namespace := $project.namespaces }}
 {{- range $deployment := $namespace.deployments }}
-{{- if $deployment.service }}
 ---
 apiVersion: v1
 kind: Service
@@ -15,12 +14,7 @@ spec:
   type: ClusterIP
   ports:
   - port: 80
-    {{- if $deployment.service.targetport }}
-    targetPort: {{ $deployment.service.targetport }}
-    {{- else }}
     targetPort: 80
-    {{- end }}
-{{- end }}
 {{- end }}
 {{- end }}
 {{- end }}

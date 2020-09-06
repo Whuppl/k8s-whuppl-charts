@@ -2,7 +2,7 @@
 {{- range $project := $projects }}
 {{- range $namespace := $project.namespaces }}
 {{- range $deployment := $namespace.deployments }}
-{{- if $deployment.service }}
+{{- if $deployment.host }}
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
@@ -17,10 +17,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - {{ $deployment.service.host }}
-    secretName: {{ $deployment.service.host }}-tls
+    - {{ $deployment.host }}
+    secretName: {{ $deployment.host }}-tls
   rules:
-  - host: {{ $deployment.service.host }}
+  - host: {{ $deployment.host }}
     http:
       paths:
       - backend:
