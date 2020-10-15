@@ -36,7 +36,7 @@ spec:
             claimName: {{ $deployment.persistentStorage.name }}-claim
         {{- end }}
       imagePullSecrets:
-      - name: calister-secret
+      - name: dockerhub-secret
 {{- end }}
 {{- end }}
 {{- end }}
