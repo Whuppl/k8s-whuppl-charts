@@ -26,6 +26,16 @@ spec:
         ports:
         - containerPort: 80
         imagePullPolicy: Always
+        {{- if $deployment.secrets }}
+        env:
+        {{- range $secret := $deployment.secrets}}
+          - name: {{ $secret.envName }}
+            valueFrom:
+              secretKeyRef:
+                name: {{ $secret.name }}
+                key: {{ $secret.key }}
+        {{- end}}
+        {{- end}}
         {{- if $deployment.persistentStorage }}
         volumeMounts:
         - name: {{ $deployment.persistentStorage.name }}-volume
