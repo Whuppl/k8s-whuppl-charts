@@ -24,7 +24,7 @@ metadata:
     type: local
     app: postgres
 spec:
-  storageClassName: manual
+  storageClassName: do-block-storage
   capacity:
     storage: {{ $namespace.database.size }}
   accessModes:
@@ -40,7 +40,7 @@ metadata:
   labels:
     app: postgres
 spec:
-  storageClassName: manual
+  storageClassName: do-block-storage
   accessModes:
     - ReadWriteMany
   resources:
