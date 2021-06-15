@@ -4,7 +4,8 @@
 {{- range $deployment := $namespace.deployments }}
 {{- if $deployment.persistentStorage }}
 # Temp fix for using block storage
-{{- if ne $deployment.persistentStorage.storageClassname "do-block-storage"}}
+{{- if $deployment.persistentStorage.storageClassName}}
+{{- if ne $deployment.persistentStorage.storageClassName "do-block-storage"}}
 ---
 kind: PersistentVolume
 apiVersion: v1
@@ -21,6 +22,7 @@ spec:
     - ReadWriteOnce
   hostPath:
     path: {{ $deployment.persistentStorage.mountPath }}
+{{- end }}
 {{- end }}
 ---
 kind: PersistentVolumeClaim
