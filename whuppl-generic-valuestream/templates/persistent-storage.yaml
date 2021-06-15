@@ -3,11 +3,13 @@
 {{- range $namespace := $project.namespaces }}
 {{- range $deployment := $namespace.deployments }}
 {{- if $deployment.persistentStorage }}
+# Temp fix for using block storage
+{{- if not $deployment.persistentStorage.storageClassname }}
 ---
 kind: PersistentVolume
 apiVersion: v1
 metadata:
-  name: {{ $deployment.persistentStorage.name}}-volume
+  name: {{ $deployment.persistentStorage.name }}-volume
   labels:
     type: local
     app: {{ $deployment.appName }}
@@ -19,6 +21,7 @@ spec:
     - ReadWriteOnce
   hostPath:
     path: {{ $deployment.persistentStorage.mountPath }}
+{{- end }}
 ---
 kind: PersistentVolumeClaim
 apiVersion: v1
@@ -28,7 +31,11 @@ metadata:
   labels:
     app: {{ $deployment.persistentStorage.appName }}
 spec:
+  {{- if $deployment.persistentStorage.storageClassName }}
+  storageClassName: {{ $deployment.persistentStorage.storageClassName }}
+  {{- else }}
   storageClassName: manual
+  {{- end }}
   accessModes:
     - ReadWriteOnce
   resources:
