@@ -20,11 +20,11 @@ deployment:
 #    limits:
 #      memory: "128Mi"
 #      cpu: "500m"
-  envFrom:
-    - secretRef:
-        name: pax-generic-app
-    - configMapRef:
-        name: pax-generic-app
+  # envFrom:
+  #   - secretRef:
+  #       name: pax-generic-app
+  #   - configMapRef:
+  #       name: pax-generic-app
 
 vpa:
   enabled: true
