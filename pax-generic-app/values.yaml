@@ -13,18 +13,36 @@ ingressgate:
 deployment:
   image: 469308538117.dkr.ecr.eu-central-1.amazonaws.com/pax-testapp:main-760e88b25a2d37129c7be3ce5ef6936c97da6950-20241023125319
   highAvailable: true
-#  resources:
-#    requests:
-#      memory: "64Mi"
-#      cpu: "250m"
-#    limits:
-#      memory: "128Mi"
-#      cpu: "500m"
+  resources:
+    requests:
+      memory: "64Mi"
+      cpu: "15m"
+    limits:
+      memory: "128Mi"
+      cpu: "50m"
+  securityContext:
+    container:
+      runAsUser: 1000
+      runAsGroup: 1000
+      runAsNonRoot: true
+      allowPrivilegeEscalation: false
+      capabilities:
+        drop:
+          - ALL
+      readOnlyRootFilesystem: true'
+    pod:
+      fsGroup: 2000
+      runAsUser: 1000
+      runAsGroup: 1000
+      seccompProfile:
+        type: RuntimeDefault  
   # envFrom:
   #   - secretRef:
   #       name: pax-generic-app
   #   - configMapRef:
   #       name: pax-generic-app
+
+  
 
 vpa:
   enabled: true

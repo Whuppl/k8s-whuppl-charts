@@ -15,32 +15,31 @@ spec:
         app: {{ .Values.application.name }}
     spec:
       containers:
-      - image: {{ .Values.deployment.image }}
-        name: {{ .Values.application.name }}
+      - name: {{ .Values.application.name }}
+        image: {{ .Values.deployment.image }}
 
-        # REQUEST RESOURCES
-        {{- if .Values.deployment.resources }}
-        resources:
-          {{- toYaml .Values.deployment.resources | nindent 10 }}
+        # [ENVIRONMENT VARIABLES]
+        {{- if .Values.deployment.envFrom }}
+        envFrom:
+          {{- toYaml .Values.deployment.envFrom | nindent 10 }}
         {{- end }}
 
-        # PORTS
+        # [RESOURCES]
+        resources:
+          {{- toYaml .Values.deployment.resources | nindent 10 }}
+
+        # [PORTS]
         {{- if .Values.service.enabled }}
         ports:
           - containerPort: {{ .Values.service.targetPort }}
             protocol: TCP
         {{- end }}
 
-        # ENVIRONMENT VARIABLES
-        {{- if .Values.deployment.envFrom }}
-        envFrom:
-          {{- toYaml .Values.deployment.envFrom | nindent 10 }}
-        {{- end }}
-
+        # [SECURITY CONTEXT] (container-level)
         securityContext:
-          allowPrivilegeEscalation: false
+          {{- toYaml .Values.deployment.securityContext.container | nindent 10 }}
 
-      # HIGH AVAILABILITY
+      # [HIGH AVAILABILITY] -> also influences replicacount
       {{- if .Values.deployment.highAvailable }}
       affinity:
         podAntiAffinity:
@@ -51,6 +50,8 @@ spec:
               topologyKey: kubernetes.io/hostname
       {{- end}}
 
+      # [SECURITY CONTEXT] (pod-level)
       securityContext:
-        runAsNonRoot: true
+        {{- toYaml .Values.deployment.securityContext.pod | nindent 10 }}
       serviceAccountName: {{ .Values.application.name }}
+      automountServiceAccountToken: false
