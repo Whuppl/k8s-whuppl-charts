@@ -29,7 +29,7 @@ deployment:
       capabilities:
         drop:
           - ALL
-      readOnlyRootFilesystem: true'
+      readOnlyRootFilesystem: true
     pod:
       fsGroup: 2000
       runAsUser: 1000
