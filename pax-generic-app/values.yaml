@@ -1,0 +1,42 @@
+application:
+  name: pax-generic-app
+
+service:
+  enabled: true
+  port: 8080
+  targetPort: 8443
+
+ingressgate:
+  enabled: true
+  host: "jacco-test.ci-pax-fwos.pax-validation-tst.aws.alliander.com"
+
+deployment:
+  image: 469308538117.dkr.ecr.eu-central-1.amazonaws.com/pax-testapp:main-760e88b25a2d37129c7be3ce5ef6936c97da6950-20241023125319
+  highAvailable: true
+#  resources:
+#    requests:
+#      memory: "64Mi"
+#      cpu: "250m"
+#    limits:
+#      memory: "128Mi"
+#      cpu: "500m"
+  envFrom:
+    - secretRef:
+        name: pax-generic-app
+    - configMapRef:
+        name: pax-generic-app
+
+vpa:
+  enabled: true
+  updateMode: Auto
+  maxAllowed:
+    cpu: "8"
+    memory: 32Gi
+  minAllowed:
+    cpu: 10m
+    memory: 10Mi
+
+# TODO:
+# nodeselector
+# probes?
+# configmaps/secrets

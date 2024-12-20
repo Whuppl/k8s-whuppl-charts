@@ -1,0 +1,85 @@
+---
+# Source: pax-generic-app/templates/serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: pax-generic-app
+---
+# Source: pax-generic-app/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: pax-generic-app
+spec:
+  selector:
+    app: pax-generic-app
+  ports:
+    - port: 8080
+      targetPort: 8443
+---
+# Source: pax-generic-app/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: pax-generic-app
+  name: pax-generic-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: pax-generic-app
+  template:
+    metadata:
+      labels:
+        app: pax-generic-app
+    spec:
+      containers:
+      - image: 469308538117.dkr.ecr.eu-central-1.amazonaws.com/pax-testapp:main-760e88b25a2d37129c7be3ce5ef6936c97da6950-20241023125319
+        name: pax-generic-app
+
+        # RESOURCES
+        resources:
+          limits:
+            cpu: 500m
+            memory: 128Mi
+          requests:
+            cpu: 250m
+            memory: 64Mi
+
+        # PORTS
+        ports:
+          - containerPort: 8443
+            protocol: TCP
+
+        securityContext:
+          allowPrivilegeEscalation: false
+
+      # HIGH AVAILABILITY
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchLabels:
+                  app: pax-generic-app
+              topologyKey: kubernetes.io/hostname
+
+      securityContext:
+        runAsNonRoot: true
+      serviceAccountName: pax-generic-app
+---
+# Source: pax-generic-app/templates/ingressgate.yaml
+apiVersion: gatemin.io/v1alpha1
+kind: IngressGate
+metadata:
+  name: pax-generic-app
+spec:
+  auth:
+    type: SSO
+  host: jacco-test.ci-pax-fwos.pax-validation-tst.aws.alliander.com
+  services:
+    - backend:
+        serviceName: pax-generic-app
+        servicePort: 8080
+      path: /
+      pathRewritePolicy: {}

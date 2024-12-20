@@ -1,0 +1,18 @@
+{{ if .Values.ingressgate.enabled }}
+{{- if .Values.service.enabled }}
+apiVersion: gatemin.io/v1alpha1
+kind: IngressGate
+metadata:
+  name: {{ .Values.application.name }}
+spec:
+  auth:
+    type: SSO
+  host: {{ .Values.ingressgate.host }}
+  services:
+    - backend:
+        serviceName: {{ .Values.application.name }}
+        servicePort: {{ .Values.service.port }}
+      path: /
+      pathRewritePolicy: {}
+{{- end }}
+{{- end }}

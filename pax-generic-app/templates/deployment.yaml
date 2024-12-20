@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: {{ .Values.application.name }}
+  name: {{ .Values.application.name }}
+spec:
+  replicas: {{ if .Values.deployment.highAvailable }}3{{ else }}1{{ end }}
+  selector:
+    matchLabels:
+      app: {{ .Values.application.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.application.name }}
+    spec:
+      containers:
+      - image: {{ .Values.deployment.image }}
+        name: {{ .Values.application.name }}
+
+        # REQUEST RESOURCES
+        {{- if .Values.deployment.resources }}
+        resources:
+          {{- toYaml .Values.deployment.resources | nindent 10 }}
+        {{- end }}
+
+        # PORTS
+        {{- if .Values.service.enabled }}
+        ports:
+          - containerPort: {{ .Values.service.targetPort }}
+            protocol: TCP
+        {{- end }}
+
+        # ENVIRONMENT VARIABLES
+        {{- if .Values.deployment.envFrom }}
+        envFrom:
+          {{- toYaml .Values.deployment.envFrom | nindent 10 }}
+        {{- end }}
+
+        securityContext:
+          allowPrivilegeEscalation: false
+
+      # HIGH AVAILABILITY
+      {{- if .Values.deployment.highAvailable }}
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchLabels:
+                  app: {{ .Values.application.name }}
+              topologyKey: kubernetes.io/hostname
+      {{- end}}
+
+      securityContext:
+        runAsNonRoot: true
+      serviceAccountName: {{ .Values.application.name }}
